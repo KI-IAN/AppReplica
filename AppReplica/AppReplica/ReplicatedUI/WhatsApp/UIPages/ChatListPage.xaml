@@ -15,6 +15,37 @@
         <viewModels:ChatListCollectionViewModel></viewModels:ChatListCollectionViewModel>
     </ContentPage.BindingContext>
 
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem 
+            IconImageSource="WhatsAppSearchIcon.png"
+            Order="Primary"
+            />
+
+        <ToolbarItem 
+            Text="New group"
+            Order="Secondary" />
+
+        <ToolbarItem 
+            Text="New broadcast"
+            Order="Secondary"/>
+
+        <ToolbarItem 
+            Text="WhatsApp Web"
+            Order="Secondary"
+            />
+
+        <ToolbarItem 
+            Text="Starred messages"
+            Order="Secondary"
+            />
+
+        <ToolbarItem 
+            Text="Settings"
+            Order="Secondary"
+            />
+
+    </ContentPage.ToolbarItems>
 
     <ListView
         x:DataType="viewModels:ChatListCollectionViewModel"

@@ -7,4 +7,24 @@
              x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.StatusListPage"
              Title="STATUS">
 
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            IconImageSource="WhatsAppSearchIcon.png"
+            Order="Primary"
+            />
+
+        <ToolbarItem 
+            Text="Status privacy"
+            Order="Secondary"
+            />
+
+        <ToolbarItem 
+            Text="Settings"
+            Order="Secondary"
+            />
+
+    </ContentPage.ToolbarItems>
+    
+
 </ContentPage>

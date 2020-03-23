@@ -7,4 +7,19 @@
              x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.CallListPage"
              Title="CALLS">
 
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            IconImageSource="WhatsAppSearchIcon.png"
+            Order="Primary"
+            />
+
+        <ToolbarItem 
+            Text="Settings"
+            Order="Secondary"
+            />
+
+    </ContentPage.ToolbarItems>
+
+
 </ContentPage>

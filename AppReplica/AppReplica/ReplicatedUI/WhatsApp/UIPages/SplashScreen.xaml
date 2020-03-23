@@ -53,7 +53,7 @@
             TextColor="{StaticResource SplashScreenFBTextColor}"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Start"
-            FontFamily="{StaticResource WhatsAppHelveticaBold}"
+            FontFamily="{StaticResource WhatsAppHelveticaNeuBold}"
             />
 
     </Grid>
