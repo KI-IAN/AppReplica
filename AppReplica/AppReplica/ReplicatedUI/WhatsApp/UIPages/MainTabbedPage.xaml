@@ -45,9 +45,10 @@
 
     </TabbedPage.ToolbarItems>
 
-    <pages:CameraAccessPage ></pages:CameraAccessPage>
+    <pages:CameraAccessPage></pages:CameraAccessPage>
     
-    <pages:ChatListPage></pages:ChatListPage>
+    <pages:ChatListPage
+        x:Name="chatPage"></pages:ChatListPage>
 
     <pages:StatusListPage></pages:StatusListPage>
 

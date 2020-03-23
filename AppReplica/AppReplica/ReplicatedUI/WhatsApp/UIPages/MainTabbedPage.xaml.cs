@@ -15,6 +15,13 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
         public MainTabbedPage()
         {
             InitializeComponent();
+
+            #region Set Current Page
+
+            this.CurrentPage = chatPage;
+
+            #endregion
+
         }
     }
 }
