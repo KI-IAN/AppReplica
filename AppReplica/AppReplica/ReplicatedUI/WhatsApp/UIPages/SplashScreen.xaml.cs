@@ -16,5 +16,22 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            await Task.Delay(3 * 1000);     //just show a splash screen for few seconds to give user a feel that application is being loaded...
+
+            await this.FadeTo(1, 1 * 10, Easing.Linear);        //Now fades out the splash screen quickly and jump to main screen
+
+            Application.Current.MainPage = new NavigationPage(new MainPage());      //Navigate to main page of the app
+
+        }
+
+
+
+
+
     }
 }
