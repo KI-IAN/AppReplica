@@ -12,5 +12,8 @@
     <Color x:Key="IndividualChatTotalCountColor">#25d66e</Color>
     <Color x:Key="TotalNewMessageCountColor">#fafbff</Color>
     <Color x:Key="NotificationBarColor">#094c45</Color>
+    <Color x:Key="SplashScreenLightTextColor">#a4a4a6</Color>
+    <Color x:Key="SplashScreenFBTextColor">#27bb65</Color>
+    <Color x:Key="SplashScreenBGColor">White</Color>
     
 </ResourceDictionary>

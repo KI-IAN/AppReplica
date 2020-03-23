@@ -19,5 +19,8 @@
     <EmbeddedResource Update="ReplicatedUI\WhatsApp\Styles\AppColors.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="ReplicatedUI\WhatsApp\UIPages\SplashScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
