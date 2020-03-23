@@ -10,7 +10,7 @@ namespace AppReplica
         {
             InitializeComponent();
 
-            MainPage = new ReplicatedUI.WhatsApp.UIPages.SplashScreen();
+            MainPage = new ReplicatedUI.WhatsApp.UIPages.MainTabbedPage();
         }
 
         protected override void OnStart()

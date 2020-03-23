@@ -23,7 +23,7 @@
                 <On Platform="Android" Value="HelveticaNeue-Medium.ttf#HelveticaNeue-Medium"></On>
             </OnPlatform>
 
-            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaBold">
+            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaNeuBold">
                 <On Platform="Android" Value="HelveticaNeue-Bold.ttf#HelveticaNeue-Bold"></On>
             </OnPlatform>
             

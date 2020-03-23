@@ -23,7 +23,7 @@ namespace AppReplica.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
-            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#094c45"));     //Change the Status Bar Color for Android
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#075E54"));     //Change the Status Bar Color for Android
 
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
