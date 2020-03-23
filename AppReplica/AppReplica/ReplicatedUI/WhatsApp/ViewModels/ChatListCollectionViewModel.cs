@@ -143,7 +143,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
             List<ChatListViewModel> data = new List<ChatListViewModel>();
 
-            for (int i = 1; i <= new Random().Next(1, 20); i++)
+            for (int i = 1; i <= new Random().Next(15, 30); i++)
             {
                 data.Add(new ChatListViewModel()
                 {
@@ -158,7 +158,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
                 });
             }
 
-            return data;
+            return data.OrderByDescending(r => r.LastMessageDateTime).ToList();
         }
 
 
