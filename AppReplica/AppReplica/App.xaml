@@ -38,5 +38,15 @@
         
         
         
+        <!-- Merged Resources-->
+        <!--<ResourceDictionary Source="ReplicatedUI/WhatsApp/Styles/AppColors.xaml"></ResourceDictionary>-->
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ReplicatedUI/WhatsApp/Styles/AppColors.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+        
     </Application.Resources>
 </Application>
