@@ -6,11 +6,35 @@
              mc:Ignorable="d"
              x:Class="AppReplica.MainPage">
 
-    <StackLayout>
+    <StackLayout
+        Spacing="2">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label Text="HelveticaNeu-Light" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+
+           FontFamily="{StaticResource WhatsAppHelveticaNeuLight}"
+
+               />
+
+        <Label Text="HelveticaNeu-Thin" 
+           HorizontalOptions="Center"
+
+           FontFamily="{StaticResource WhatsAppHelveticaNeuThin}"
+               />
+
+        <Label Text="HelveticaNeu-Medium" 
+           HorizontalOptions="Center"
+
+           FontFamily="{StaticResource WhatsAppHelveticaNeuMedium}"
+               
+               />
+
+        <Label Text="HelveticaNeu-Bold" 
+           HorizontalOptions="Center"
+           FontFamily="{StaticResource WhatsAppHelveticaBold}"
+               />
+
+
     </StackLayout>
 
 </ContentPage>

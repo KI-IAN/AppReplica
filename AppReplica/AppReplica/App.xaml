@@ -6,6 +6,37 @@
              mc:Ignorable="d"
              x:Class="AppReplica.App">
     <Application.Resources>
+        
+        
+        <!-- WhatsApp Fonts -->
+        <ResourceDictionary>
 
+            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaNeuLight">
+                <On Platform="Android" Value="HelveticaNeue-Light.ttf#HelveticaNeue-Light" ></On>
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaNeuThin">
+                <On Platform="Android" Value="HelveticaNeue-Thin.ttf#HelveticaNeue-Thin" ></On>
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaNeuMedium">
+                <On Platform="Android" Value="HelveticaNeue-Medium.ttf#HelveticaNeue-Medium"></On>
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaBold">
+                <On Platform="Android" Value="HelveticaNeue-Bold.ttf#HelveticaNeue-Bold"></On>
+            </OnPlatform>
+            
+        </ResourceDictionary>
+        
+        
+        
+        <!-- Implicit usages of same font across WhatsApp UI-->
+        <Style TargetType="Label">
+            <Setter Property="Text" Value="{StaticResource WhatsAppHelveticaNeuLight}"></Setter>
+        </Style>
+        
+        
+        
     </Application.Resources>
 </Application>
