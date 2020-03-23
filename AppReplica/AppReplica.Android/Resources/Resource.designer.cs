@@ -8412,7 +8412,13 @@ namespace AppReplica.Droid
 			public const int WhatsAppDefaultProfilePic = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int WhatsAppLogo = 2131165320;
+			public const int WhatsAppKebabMenuIcon = 2131165320;
+			
+			// aapt resource value: 0x7F070089
+			public const int WhatsAppLogo = 2131165321;
+			
+			// aapt resource value: 0x7F07008A
+			public const int WhatsAppSearchIcon = 2131165322;
 			
 			static Drawable()
 			{

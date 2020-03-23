@@ -88,7 +88,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
             ChatCollection = new ObservableCollection<ChatListViewModel>(GetAllChat());
 
-            TotalUnreadMessage = ChatCollection.Sum(r => r.TotalUnreadMessage);
+            TotalUnreadMessage = ChatCollection.Where(r => r.TotalUnreadMessage > 0).Count();
+
 
             #endregion
 
@@ -129,7 +130,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
         private void RefreshList()
         {
             this.ChatCollection = new ObservableCollection<ChatListViewModel>(GetAllChat());
-            this.TotalUnreadMessage = ChatCollection.Sum(r => r.TotalUnreadMessage);
+            this.TotalUnreadMessage = ChatCollection.Where(r => r.TotalUnreadMessage > 0).Count();
             this.IsListViewRefreshing = false;
         }
 

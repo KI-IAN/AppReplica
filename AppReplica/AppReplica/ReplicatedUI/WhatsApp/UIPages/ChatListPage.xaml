@@ -83,9 +83,9 @@
                         </Frame>
 
                         <Label 
-                            Text="{Binding ContactNumber}"
+                            Text="{Binding Contact}"
                             FontFamily="{StaticResource WhatsAppHelveticaNeuBold}"
-                            FontSize="Medium"
+                            FontSize="15"
                             TextColor="Black"
                             Grid.Row="0"
                             Grid.Column="1"

@@ -13,14 +13,41 @@
 
 
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Text=":">
-            
-        </ToolbarItem>
+
+        <ToolbarItem 
+            IconImageSource="WhatsAppSearchIcon.png"
+            Order="Primary"
+            />
+
+        <ToolbarItem 
+            Text="New group"
+            Order="Secondary" />
+
+        <ToolbarItem 
+            Text="New broadcast"
+            Order="Secondary"/>
+
+        <ToolbarItem 
+            Text="WhatsApp Web"
+            Order="Secondary"
+            />
+
+        <ToolbarItem 
+            Text="Starred messages"
+            Order="Secondary"
+            />
+
+        <ToolbarItem 
+            Text="Settings"
+            Order="Secondary"
+            />
+
+
     </TabbedPage.ToolbarItems>
 
     <pages:CameraAccessPage ></pages:CameraAccessPage>
     
-    <pages:ChatListPage x:Name="chatPage"></pages:ChatListPage>
+    <pages:ChatListPage></pages:ChatListPage>
 
     <pages:StatusListPage></pages:StatusListPage>
 

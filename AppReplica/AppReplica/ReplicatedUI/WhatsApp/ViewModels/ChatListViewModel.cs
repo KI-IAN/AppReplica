@@ -27,6 +27,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
         Enum.EnumMessageStatus _messageStatus;
 
+        string _contact;
+
         #endregion
 
 
@@ -74,6 +76,23 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
             set
             {
                 _contactNumber = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        public string Contact
+        {
+
+            get
+            {
+                _contact = String.IsNullOrEmpty(this.ContactName) ? this.ContactNumber : this.ContactName;
+                return _contact;
+            }
+
+            set
+            {
+                _contact = value;
                 OnPropertyChanged();
             }
         }
