@@ -21,6 +21,10 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
         bool _isListViewRefreshing;
 
+        int _totalArchivedChat;
+
+        bool _hasArchivedChats;
+
         #endregion
 
 
@@ -77,6 +81,38 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
         public Command RefreshListCommand { get; }
 
 
+        public int TotalArchivedChat
+        {
+
+            get
+            {
+                return _totalArchivedChat;
+            }
+
+            set
+            {
+                _totalArchivedChat = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        public bool HasArchivedChats
+        {
+            get
+            {
+                return _hasArchivedChats;
+            }
+
+            set
+            {
+                _hasArchivedChats = value;
+                OnPropertyChanged();
+            }
+
+
+        }
+
         #endregion
 
 
@@ -86,16 +122,13 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
         {
             #region Initialize Data
 
-            ChatCollection = new ObservableCollection<ChatListViewModel>(GetAllChat());
-
-            TotalUnreadMessage = ChatCollection.Where(r => r.TotalUnreadMessage > 0).Count();
-
+            LoadListData();
 
             #endregion
 
             #region Attaching Command Handlers
 
-            RefreshListCommand = new Command(RefreshList);
+            RefreshListCommand = new Command(LoadListData);
 
             #endregion
 
@@ -127,11 +160,13 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
         #region Command Handler Function
 
 
-        private void RefreshList()
+        private void LoadListData()
         {
-            this.ChatCollection = new ObservableCollection<ChatListViewModel>(GetAllChat());
-            this.TotalUnreadMessage = ChatCollection.Where(r => r.TotalUnreadMessage > 0).Count();
-            this.IsListViewRefreshing = false;
+            ChatCollection = new ObservableCollection<ChatListViewModel>(GetAllChat());
+            TotalUnreadMessage = ChatCollection.Where(r => r.TotalUnreadMessage > 0).Count();
+            TotalArchivedChat = new Random().Next(0, 5);
+            HasArchivedChats = TotalArchivedChat > 0 ? true : false;
+            IsListViewRefreshing = false;
         }
 
         #endregion
@@ -154,8 +189,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
                     LastMessageDateTime = new DateTime(new Random().Next(2013, 2021), new Random().Next(1, 11), new Random().Next(1, 28),
                                                         new Random().Next(1, 22), new Random().Next(1, 59), new Random().Next(1, 59)),
                     MessageStatus = (Enum.EnumMessageStatus)new Random().Next(1, 3),
-                    TotalUnreadMessage = (new Random().Next(0, 30) <= 10 ? 0 : new Random().Next(11,30)),
-                    ProfileImageURL = $"{( i <= 12 ? $"Avatar_{new Random().Next(1,13)}" : "WhatsAppDefaultProfilePic.png")}",
+                    TotalUnreadMessage = (new Random().Next(0, 30) <= 10 ? 0 : new Random().Next(11, 30)),
+                    ProfileImageURL = $"{(i <= 12 ? $"Avatar_{new Random().Next(1, 13)}" : "WhatsAppDefaultProfilePic.png")}",
                 });
             }
 

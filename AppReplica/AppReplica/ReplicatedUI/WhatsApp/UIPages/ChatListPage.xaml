@@ -67,6 +67,40 @@
         AbsoluteLayout.LayoutBounds="0,0,1,1"
         AbsoluteLayout.LayoutFlags="All"
         >
+
+
+            <ListView.Footer>
+
+
+                <StackLayout>
+
+                    <Button
+                        Text="{Binding TotalArchivedChat, StringFormat='Archived ({0})'}"
+                        FontAttributes="Bold"
+                        BackgroundColor="Transparent"
+                        Padding="0,20,0,40"
+                        TextColor="SlateGray"
+                        FontSize="11"
+                        IsVisible="{Binding HasArchivedChats}"
+                    />
+
+                    <Label 
+                        Text="Tap and hold on a chat for more options"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                        Padding="0,20,0,40"
+                        TextColor="SlateGray"
+                        FontSize="11"
+                        IsVisible="{Binding HasArchivedChats, Converter={StaticResource NegationConverter}}"
+                        />
+
+                </StackLayout>
+
+            </ListView.Footer>
+
+
+            
             <ListView.ItemTemplate
             >
                 <DataTemplate
@@ -178,6 +212,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+
+
 
 
         <!-- Sticky Send Message Button : Bottom Right Corner-->

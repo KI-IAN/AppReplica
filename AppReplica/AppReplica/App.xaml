@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.Converter"
              mc:Ignorable="d"
              x:Class="AppReplica.App">
     <Application.Resources>
@@ -35,9 +36,13 @@
         <Style TargetType="Label">
             <Setter Property="Text" Value="{StaticResource WhatsAppHelveticaNeuLight}"></Setter>
         </Style>
-        
-        
-        
+
+        <Style TargetType="Button">
+            <Setter Property="Text" Value="{StaticResource WhatsAppHelveticaNeuLight}"></Setter>
+        </Style>
+
+
+
         <!-- Merged Resources-->
         <!--<ResourceDictionary Source="ReplicatedUI/WhatsApp/Styles/AppColors.xaml"></ResourceDictionary>-->
 
@@ -47,6 +52,12 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         
+        
+        
+        <!-- Converters -->
+        <ResourceDictionary>
+            <converters:NegationConverter x:Key="NegationConverter" />
+        </ResourceDictionary>
         
     </Application.Resources>
 </Application>
