@@ -7,6 +7,7 @@
              mc:Ignorable="d"
              x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.ChatListPage"
              Title="{Binding TotalUnreadMessage, StringFormat='CHATS ({0})'}"
+             
              >
 
 
@@ -47,7 +48,10 @@
 
     </ContentPage.ToolbarItems>
 
-    <AbsoluteLayout>
+    <AbsoluteLayout
+        >
+
+
 
         <ListView
         x:DataType="viewModels:ChatListCollectionViewModel"
@@ -60,10 +64,9 @@
         RefreshCommand="{Binding RefreshListCommand}"
         IsPullToRefreshEnabled="True"
         IsRefreshing="{Binding IsListViewRefreshing}"
-
+        AbsoluteLayout.LayoutBounds="0,0,1,1"
+        AbsoluteLayout.LayoutFlags="All"
         >
-
-
             <ListView.ItemTemplate
             >
                 <DataTemplate
@@ -170,32 +173,14 @@
                                    VerticalTextAlignment="Center" />
                             </Frame>
 
-
-                            <!--<BoxView 
-                                Margin="0,10,0,10"
-                                Grid.Row="2"
-                                Grid.Column="1"
-                                Grid.ColumnSpan="2"
-                                BackgroundColor="LightGray"
-                                HeightRequest="1"
-                                WidthRequest="1"
-                                HorizontalOptions="FillAndExpand"
-                                />-->
-
-
                         </Grid>
                     </ViewCell>
-
-
-
                 </DataTemplate>
             </ListView.ItemTemplate>
-
-
-
         </ListView>
 
 
+        <!-- Sticky Send Message Button : Bottom Right Corner-->
         <Frame
             BackgroundColor="#25D366"
             CornerRadius="30"
@@ -210,13 +195,9 @@
                 Source="WhatsAppStickyButton.png"
                 BackgroundColor="Transparent"
                 />
-
-
         </Frame>
-        
+
 
     </AbsoluteLayout>
-    
-
 
 </ContentPage>
