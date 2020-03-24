@@ -66,6 +66,8 @@
         IsRefreshing="{Binding IsListViewRefreshing}"
         AbsoluteLayout.LayoutBounds="0,0,1,1"
         AbsoluteLayout.LayoutFlags="All"
+        x:Name="lvChat"
+        BackgroundColor="White"
         >
 
 
@@ -77,8 +79,8 @@
                     <Button
                         Text="{Binding TotalArchivedChat, StringFormat='Archived ({0})'}"
                         FontAttributes="Bold"
-                        BackgroundColor="Transparent"
-                        Padding="0,20,0,40"
+                        Margin="0,20,0,40"
+                        BackgroundColor="{Binding Source={x:Reference lvChat}, Path=BackgroundColor}"
                         TextColor="SlateGray"
                         FontSize="11"
                         IsVisible="{Binding HasArchivedChats}"
@@ -221,7 +223,7 @@
         <Frame
             BackgroundColor="#25D366"
             CornerRadius="30"
-            AbsoluteLayout.LayoutBounds=".92,.95,60,60"
+            AbsoluteLayout.LayoutBounds=".92,.98,60,60"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Margin="0"
             Padding="15"
