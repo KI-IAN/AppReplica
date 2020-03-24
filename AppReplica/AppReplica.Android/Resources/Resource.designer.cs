@@ -8420,6 +8420,9 @@ namespace AppReplica.Droid
 			// aapt resource value: 0x7F07008A
 			public const int WhatsAppSearchIcon = 2131165322;
 			
+			// aapt resource value: 0x7F07008B
+			public const int WhatsAppStickyButton = 2131165323;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

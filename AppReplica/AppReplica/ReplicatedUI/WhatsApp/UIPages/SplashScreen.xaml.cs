@@ -28,7 +28,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
             //Navigate to main page of the app
             Application.Current.MainPage = new NavigationPage(new ReplicatedUI.WhatsApp.UIPages.MainTabbedPage())
             {
-                BarBackgroundColor = Color.FromHex("#128C7E"),      //Change the default bar background color
+                BarBackgroundColor = Color.FromHex("#128C7E"),      //Change the default background color of navigation bar
                
             };      
 
