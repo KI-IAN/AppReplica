@@ -16,5 +16,15 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
         {
             InitializeComponent();
         }
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new NavigationPage(new SettingsPages.MainSettingsPage())
+            //{
+            //    BarBackgroundColor = Color.FromHex("#128C7E"),
+            //});
+
+            await Navigation.PushAsync(new SettingsPages.MainSettingsPage());
+        }
     }
 }

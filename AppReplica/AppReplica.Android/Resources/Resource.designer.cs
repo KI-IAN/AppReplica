@@ -8421,7 +8421,25 @@ namespace AppReplica.Droid
 			public const int WhatsAppSearchIcon = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int WhatsAppStickyButton = 2131165323;
+			public const int WhatsAppSettingsAccount = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int WhatsAppSettingsChat = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int WhatsAppSettingsDataUsage = 2131165325;
+			
+			// aapt resource value: 0x7F07008E
+			public const int WhatsAppSettingsHelp = 2131165326;
+			
+			// aapt resource value: 0x7F07008F
+			public const int WhatsAppSettingsInviteAFriend = 2131165327;
+			
+			// aapt resource value: 0x7F070090
+			public const int WhatsAppSettingsNotification = 2131165328;
+			
+			// aapt resource value: 0x7F070091
+			public const int WhatsAppStickyButton = 2131165329;
 			
 			static Drawable()
 			{

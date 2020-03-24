@@ -10,14 +10,14 @@ namespace AppReplica
         {
             InitializeComponent();
 
-            //MainPage = new ReplicatedUI.WhatsApp.UIPages.SplashScreen();
+            MainPage = new ReplicatedUI.WhatsApp.UIPages.SplashScreen();
 
-            MainPage = new NavigationPage(new ReplicatedUI.WhatsApp.UIPages.MainTabbedPage())
-            {
-                BarBackgroundColor = Color.FromHex("#128C7E"),
-            };
+            //MainPage = new NavigationPage(new ReplicatedUI.WhatsApp.UIPages.SettingsPages.MainSettingsPage())
+            //{
+            //    BarBackgroundColor = Color.FromHex("#128C7E"),
+            //};
 
-            //MainPage = new Experiment.DemoPages.AbsoluteLayoutDemo();
+            //MainPage = new ReplicatedUI.WhatsApp.UIPages.SettingsPages.MainSettingsPage();
         }
 
         protected override void OnStart()

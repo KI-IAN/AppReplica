@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.SettingsPages.MainSettingsPage"
+             Title="Settings">
+
+
+    <ContentPage.BindingContext>
+        <viewModel:SettingsPageViewModel></viewModel:SettingsPageViewModel>
+    </ContentPage.BindingContext>
+    
+
+    <StackLayout>
+        
+        <!-- Profile Section-->
+        <Grid
+            ColumnSpacing="20"
+            Margin="10,20,10,10"
+            >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                CornerRadius="35"
+                Padding="0"
+                Margin="0"
+                IsClippedToBounds="True"
+                HeightRequest="70"
+                >
+
+
+                <Image 
+                    Source="Avatar_4.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    />
+
+
+            </Frame>
+
+            <Label 
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="User Name"
+                FontSize="18"
+            />
+
+            <Label 
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="Hey there! I amusing WhatsApp."
+                FontSize="12"
+            />
+
+
+
+        </Grid>
+
+        <!-- Horizontal Separator-->
+        
+        <BoxView 
+            BackgroundColor="LightGray"
+            HeightRequest="1"
+            Opacity="0.4"
+            HorizontalOptions="FillAndExpand"
+            Margin="0,0,0,20"
+            />
+
+
+        <!-- Settings in Collection View-->
+        <CollectionView
+            ItemsSource="{Binding SettingsList}"
+            SelectionMode="Single"
+            >
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate
+                    x:DataType="viewModel:SettingsViewModel"
+                    >
+
+                    <Grid
+                        ColumnSpacing="10"
+                        RowSpacing="1"
+                        Margin="10"
+                        >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <Image 
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.RowSpan="2"
+                            Source="{Binding IconSource}"
+                            HeightRequest="28"
+                            WidthRequest="28"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            />
+
+
+                        <Label 
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="{Binding Title}"
+                            FontSize="16"
+                            TextColor="Black"
+                            />
+
+                        <Label 
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Text="{Binding Description}"
+                            FontSize="12"
+                            />
+
+
+                    </Grid>
+                    
+                </DataTemplate>
+                
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.Footer>
+                <StackLayout
+                    Orientation="Horizontal">
+
+                    <BoxView 
+                    BackgroundColor="LightGray"
+                    HeightRequest="1"  
+                    Opacity="0.4"
+                    Margin="75,0,0,0"
+                    HorizontalOptions="FillAndExpand"
+                    />
+
+                </StackLayout>
+
+            </CollectionView.Footer>
+            
+            
+        </CollectionView>
+
+        <!-- Horizontal Separator-->
+
+
+
+
+    </StackLayout>
+    
+    
+    
+    
+</ContentPage>

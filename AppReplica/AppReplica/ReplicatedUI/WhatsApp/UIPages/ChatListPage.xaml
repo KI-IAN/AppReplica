@@ -44,6 +44,7 @@
         <ToolbarItem 
             Text="Settings"
             Order="Secondary"
+            Clicked="ToolbarItem_Clicked"
             />
 
     </ContentPage.ToolbarItems>
