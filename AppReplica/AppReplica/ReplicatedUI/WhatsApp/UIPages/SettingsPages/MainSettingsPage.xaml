@@ -14,6 +14,7 @@
     </ContentPage.BindingContext>
     
 
+    
     <StackLayout
         BackgroundColor="White">
         
@@ -87,7 +88,7 @@
         <CollectionView
             ItemsSource="{Binding SettingsList}"
             SelectionMode="Multiple"
-            
+            SelectionChanged="CollectionView_SelectionChanged"
             >
 
             <CollectionView.ItemTemplate>
