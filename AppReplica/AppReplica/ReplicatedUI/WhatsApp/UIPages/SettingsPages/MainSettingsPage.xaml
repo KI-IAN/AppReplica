@@ -64,7 +64,7 @@
             <Label 
                 Grid.Row="1"
                 Grid.Column="1"
-                Text="Hey there! I amusing WhatsApp."
+                Text="Hey there! I am using WhatsApp."
                 FontSize="12"
             />
 
@@ -86,7 +86,8 @@
         <!-- Settings in Collection View-->
         <CollectionView
             ItemsSource="{Binding SettingsList}"
-            SelectionMode="Single"
+            SelectionMode="Multiple"
+            
             >
 
             <CollectionView.ItemTemplate>

@@ -24,7 +24,7 @@
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
 
     <!--Highlighted selected item color of ListView/CollectionView-->
-    <item name="android:colorActivatedHighlight">#FFFFFF</item>
+    <!--<item name="android:colorActivatedHighlight">#123456</item>-->
     
   </style>
 

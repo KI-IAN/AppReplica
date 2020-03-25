@@ -133,28 +133,54 @@
 
 
 
+                            <AbsoluteLayout
+                                
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.RowSpan="3">
 
-                            <Frame
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.RowSpan="3"
+                                <Frame
+                            
                             Padding="0"
                             Margin="0"
-                            CornerRadius="30"
-                            HeightRequest="60"
-                            WidthRequest="60"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            WidthRequest="50"
                             IsClippedToBounds="True">
 
-                                <Image 
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.RowSpan="3"
+                                    <Image 
+
                             Source="{Binding ProfileImageURL}"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
                                     />
+                                    
 
-                            </Frame>
+                                </Frame>
+
+
+                                <Frame
+                                    CornerRadius="10"
+                                    Padding="0"
+                                    Margin="0"
+                                    IsClippedToBounds="True"
+                                    AbsoluteLayout.LayoutBounds=".98,.98,20,20"
+                                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                                    BorderColor="White"
+                                    BackgroundColor="{StaticResource WhatsAppSelectedItemBGColor}"
+                                    IsVisible="{Binding ShowUnreadMessageAlert}"
+                                    >
+
+                                    <Image 
+                                        Source="WhatsAppWhiteTicks.png"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        WidthRequest="12"
+                                        HeightRequest="12"
+                                        />
+                                </Frame>
+
+                            </AbsoluteLayout>
 
                             <Label 
                             Text="{Binding Contact}"

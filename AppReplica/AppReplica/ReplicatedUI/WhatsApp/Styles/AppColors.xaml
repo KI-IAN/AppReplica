@@ -13,5 +13,6 @@
     <Color x:Key="SplashScreenLightTextColor">#a4a4a6</Color>
     <Color x:Key="SplashScreenFBTextColor">#27bb65</Color>
     <Color x:Key="SplashScreenBGColor">White</Color>
+    <Color x:Key="WhatsAppSelectedItemBGColor">#128C7E</Color>
     
 </ResourceDictionary>

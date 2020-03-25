@@ -8441,6 +8441,9 @@ namespace AppReplica.Droid
 			// aapt resource value: 0x7F070091
 			public const int WhatsAppStickyButton = 2131165329;
 			
+			// aapt resource value: 0x7F070092
+			public const int WhatsAppWhiteTicks = 2131165330;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
