@@ -67,6 +67,18 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages.SettingsPages
                     Text = "Archive Chat",
                     IconImageSource = "WhatsAppArchieve.png",
                 },
+
+                //Secondary Menu Items
+                new ToolbarItem(){
+                    Text = "Mark as unread",
+                    Order= ToolbarItemOrder.Secondary,
+                },
+
+                new ToolbarItem(){
+                    Text = "Select all",
+                    Order = ToolbarItemOrder.Secondary,
+                },
+
             };
 
 
