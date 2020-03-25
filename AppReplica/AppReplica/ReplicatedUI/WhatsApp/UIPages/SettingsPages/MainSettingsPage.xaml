@@ -14,7 +14,8 @@
     </ContentPage.BindingContext>
     
 
-    <StackLayout>
+    <StackLayout
+        BackgroundColor="White">
         
         <!-- Profile Section-->
         <Grid
