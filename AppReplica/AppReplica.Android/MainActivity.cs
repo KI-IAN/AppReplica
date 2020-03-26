@@ -19,6 +19,13 @@ namespace AppReplica.Droid
 
             base.OnCreate(savedInstanceState);
 
+
+            #region Initialize RG.Plugins.Popup
+
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
+            #endregion
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
@@ -32,5 +39,26 @@ namespace AppReplica.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+
+        #region RG.Plugins.Popup Overrides OnBackPressed
+
+        public override void OnBackPressed()
+        {
+
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            {
+                //Do something if there are some pages in the PopupStack
+            }
+            else
+            {
+                //Do something if there ar not any pages in the PopupStack
+            }
+
+        }
+
+        #endregion
+
+
     }
 }
