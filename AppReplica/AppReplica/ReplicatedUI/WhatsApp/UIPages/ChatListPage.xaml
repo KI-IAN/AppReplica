@@ -44,7 +44,8 @@
         <ToolbarItem 
             Text="Settings"
             Order="Secondary"
-            Clicked="ToolbarItem_Clicked"
+            Command="{Binding NavigatePageCommand}"
+            CommandParameter="Settings"
             />
 
     </ContentPage.ToolbarItems>

@@ -80,6 +80,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
         public Command RefreshListCommand { get; }
 
+        public Command NavigatePageCommand { get; }
 
         public int TotalArchivedChat
         {
@@ -130,6 +131,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
             RefreshListCommand = new Command(LoadListData);
 
+            NavigatePageCommand = new Command((object parameter) => NavigatePage(parameter));
+
             #endregion
 
 
@@ -168,6 +171,13 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
             HasArchivedChats = TotalArchivedChat > 0 ? true : false;
             IsListViewRefreshing = false;
         }
+
+
+        private async void NavigatePage(object commandParameter)
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new UIPages.SettingsPages.MainSettingsPage());
+        }
+
 
         #endregion
 
