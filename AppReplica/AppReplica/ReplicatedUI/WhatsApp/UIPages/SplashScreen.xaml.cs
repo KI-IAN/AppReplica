@@ -26,11 +26,14 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
             await this.FadeTo(1, 1 * 250, Easing.Linear);        //Now fades out the splash screen quickly and jump to main screen
 
             //Navigate to main page of the app
-            Application.Current.MainPage = new NavigationPage(new ReplicatedUI.WhatsApp.UIPages.MainTabbedPage())
+            App.NavPage = new NavigationPage(new ReplicatedUI.WhatsApp.UIPages.MainTabbedPage())
             {
                 BarBackgroundColor = Color.FromHex("#128C7E"),      //Change the default background color of navigation bar
                
-            };      
+            };
+
+            //Set NavPage as Current Main Page
+            Application.Current.MainPage = App.NavPage;
 
         }
 

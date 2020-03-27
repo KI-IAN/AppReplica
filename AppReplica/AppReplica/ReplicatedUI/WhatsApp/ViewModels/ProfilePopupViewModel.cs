@@ -126,6 +126,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
             await PopupNavigation.Instance.PopAsync();      //removed the recently opened pop up
 
+            App.NavPage.BarBackgroundColor = Color.Black;       //Change the BarBackGround Color to Black
+
             await Application.Current.MainPage.Navigation.PushAsync(new UIPages.ProfilePicPage(new ProfilePicViewModel()
             {
                 Contact = data.Contact,

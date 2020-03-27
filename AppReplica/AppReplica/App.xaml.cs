@@ -6,6 +6,9 @@ namespace AppReplica
 {
     public partial class App : Application
     {
+        public static NavigationPage NavPage { get; set; }
+
+
         public App()
         {
             InitializeComponent();

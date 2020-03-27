@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.Drawing;
+using Xamarin.Forms;
+using Color = Xamarin.Forms.Color;
 
 namespace AppReplica.Droid
 {
@@ -45,6 +48,9 @@ namespace AppReplica.Droid
 
         public override void OnBackPressed()
         {
+            //Change the BarBackground color back to default color
+            App.NavPage.BarBackgroundColor = Color.FromHex("#128C7E");
+
 
             if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
             {

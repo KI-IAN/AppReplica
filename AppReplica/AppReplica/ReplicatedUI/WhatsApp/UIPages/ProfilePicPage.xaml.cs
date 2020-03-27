@@ -23,5 +23,15 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
 
             this.BindingContext = data;
         }
+
+        protected override void OnDisappearing()
+        {
+            //When this page is closed using soft back button on Navigation Bar, change the Bar Background color back to default color
+            App.NavPage.BarBackgroundColor = Color.FromHex("#128C7E");
+
+            base.OnDisappearing();
+
+        }
+
     }
 }
