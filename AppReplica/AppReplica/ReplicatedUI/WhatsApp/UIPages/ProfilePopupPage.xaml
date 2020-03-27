@@ -11,9 +11,9 @@
     mc:Ignorable="d">
 
 
-    <!--<pages:PopupPage.BindingContext>
-        <viewModels:ProfilePopupViewModel></viewModels:ProfilePopupViewModel>
-    </pages:PopupPage.BindingContext>-->
+    <pages:PopupPage.BindingContext>
+        <viewModels:ProfilePopupViewModel />
+    </pages:PopupPage.BindingContext>
 
 
     <pages:PopupPage.Animation>
@@ -58,6 +58,8 @@
                 Grid.Column="0"
                 Aspect="Fill"
                 BackgroundColor="Transparent"
+                Command="{Binding ShowProfilePicCommand}"
+                CommandParameter="{Binding .}"
                 HeightRequest="220"
                 Source="{Binding ProfilePicSource}"
                 WidthRequest="255" />

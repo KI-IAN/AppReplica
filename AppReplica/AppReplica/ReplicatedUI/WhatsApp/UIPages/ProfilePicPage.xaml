@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.ProfilePicPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.ViewModels"
+    Title="{Binding Contact}"
+    x:DataType="viewModels:ProfilePicViewModel"
+    BackgroundColor="Black"
+    mc:Ignorable="d">
+
+
+    <ContentPage.BindingContext>
+        <viewModels:ProfilePicViewModel />
+    </ContentPage.BindingContext>
+
+
+    <StackLayout
+        Margin="0"
+        Padding="0"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="CenterAndExpand"
+            Source="{Binding ProfilePicSource}"
+            VerticalOptions="Center" />
+
+
+    </StackLayout>
+
+
+</ContentPage>
