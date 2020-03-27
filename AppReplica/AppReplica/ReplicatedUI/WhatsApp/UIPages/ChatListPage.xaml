@@ -7,11 +7,11 @@
              mc:Ignorable="d"
              x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.ChatListPage"
              Title="{Binding TotalUnreadMessage, StringFormat='CHATS ({0})'}"
-             
+             x:Name="chatContentPage"
              >
 
 
-    
+
     <ContentPage.BindingContext>
         <viewModels:ChatListCollectionViewModel></viewModels:ChatListCollectionViewModel>
     </ContentPage.BindingContext>
@@ -104,7 +104,7 @@
             </ListView.Footer>
 
 
-            
+
             <ListView.ItemTemplate
             >
                 <DataTemplate
@@ -149,13 +149,16 @@
                             WidthRequest="50"
                             IsClippedToBounds="True">
 
-                                    <Image 
+                                    <ImageButton 
 
                             Source="{Binding ProfileImageURL}"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
+                                        Aspect="Fill"
+                                        Command="{Binding Source={x:Reference chatContentPage}, Path=BindingContext.PopupProfileCommand}"
+                                        CommandParameter="{Binding .}"
                                     />
-                                    
+
 
                                 </Frame>
 

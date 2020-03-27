@@ -19,7 +19,7 @@ namespace AppReplica
 
             //MainPage = new ReplicatedUI.WhatsApp.UIPages.SettingsPages.MainSettingsPage();
 
-            MainPage = new Experiment.PopUpPages.TestPopupPage();
+            //MainPage = new Experiment.PopUpPages.TestPopupPage();
 
         }
 

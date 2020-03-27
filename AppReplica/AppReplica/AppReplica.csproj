@@ -41,6 +41,9 @@
     <EmbeddedResource Update="ReplicatedUI\WhatsApp\UIPages\MainTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="ReplicatedUI\WhatsApp\UIPages\ProfilePopupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="ReplicatedUI\WhatsApp\UIPages\SettingsPages\MainSettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

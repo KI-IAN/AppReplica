@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animation ="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:viewModels="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.ViewModels"
+             mc:Ignorable="d"
+             x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.ProfilePopupPage">
+
+
+    <!--<pages:PopupPage.BindingContext>
+        <viewModels:ProfilePopupViewModel></viewModels:ProfilePopupViewModel>
+    </pages:PopupPage.BindingContext>-->
+    
+
+    <pages:PopupPage.Animation>
+        <animation:ScaleAnimation 
+            PositionIn="Left"
+            PositionOut="Left"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="Linear"
+            EasingOut="SinOut"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+
+    <Frame
+        x:DataType="viewModels:ProfilePopupViewModel"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Padding="0,0,0,10"
+        WidthRequest="255"
+        HeightRequest="250"
+        x:Name="frmPopup"
+        >
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+           
+
+            <ImageButton 
+                Source="{Binding ProfilePicSource}"
+                Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="Transparent"
+                Aspect="Fill"
+                WidthRequest="255"
+                HeightRequest="220"
+                />
+
+            <!-- Overlay-->
+            <Frame
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="StartAndExpand"
+                Margin="0"
+                Padding="10"
+                Opacity=".6"
+                BackgroundColor="#474747"
+                CornerRadius="0"
+                >
+
+                <Label 
+
+                Text="{Binding Contact}"
+                TextColor="White"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Start"
+                HorizontalTextAlignment="Start"
+                VerticalTextAlignment="Start"
+                />
+
+            </Frame>
+
+
+            <BoxView 
+                Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="DimGray"
+                HeightRequest="1"
+                VerticalOptions="End"
+                HorizontalOptions="Fill"
+                Opacity="0.5"
+                />
+
+
+
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="0"
+                Orientation="Horizontal"
+                >
+
+                <ImageButton 
+                    Source="WhatsAppSendText.png"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="24"
+                    HeightRequest="24"
+                    BackgroundColor="Transparent"
+                    />
+
+                <ImageButton 
+                    Source="WhatsAppCall.png"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="24"
+                    HeightRequest="24"
+                    BackgroundColor="Transparent"
+                    
+                    />
+
+                <ImageButton 
+                    Source="WhatsAppVideoCall.png"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="24"
+                    HeightRequest="24"
+                    BackgroundColor="Transparent"
+                    
+                    />
+
+                <ImageButton 
+                    Source="WhatsAppInfo.png"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="24"
+                    HeightRequest="24"
+                    BackgroundColor="Transparent"
+                    
+                    />
+
+            </StackLayout>
+            
+
+
+
+        </Grid>
+
+    </Frame>
+    
+</pages:PopupPage>

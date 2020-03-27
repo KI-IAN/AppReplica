@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Linq;
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Services;
 
 namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 {
@@ -82,6 +83,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
         public Command NavigatePageCommand { get; }
 
+        public Command PopupProfileCommand { get; }
+
         public int TotalArchivedChat
         {
 
@@ -133,6 +136,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
             NavigatePageCommand = new Command((object parameter) => NavigatePage(parameter));
 
+            PopupProfileCommand = new Command((object parameter) => PopupProfile(parameter));
+
             #endregion
 
 
@@ -179,6 +184,18 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
         }
 
 
+        private async void PopupProfile(object parameter)
+        {
+            ChatListViewModel data = (ChatListViewModel)parameter;
+
+            await PopupNavigation.Instance.PushAsync(new UIPages.ProfilePopupPage(new ProfilePopupViewModel()
+            {
+                ContactName = data.ContactName,
+                ContactNumber = data.ContactNumber,
+                ProfilePicSource = data.ProfileImageURL,
+            }));
+        }
+
         #endregion
 
 
@@ -200,7 +217,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
                                                         new Random().Next(1, 22), new Random().Next(1, 59), new Random().Next(1, 59)),
                     MessageStatus = (Enum.EnumMessageStatus)new Random().Next(1, 3),
                     TotalUnreadMessage = (new Random().Next(0, 30) <= 10 ? 0 : new Random().Next(11, 30)),
-                    ProfileImageURL = $"{(i <= 12 ? $"Avatar_{new Random().Next(1, 13)}" : "WhatsAppDefaultProfilePic.png")}",
+                    ProfileImageURL = $"{(i <= 19 ? $"Avatar_{new Random().Next(15, 20)}" : "WhatsAppDefaultProfilePic.png")}",
                 });
             }
 
