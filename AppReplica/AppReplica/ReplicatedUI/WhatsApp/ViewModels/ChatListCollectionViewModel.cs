@@ -217,7 +217,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
                                                         new Random().Next(1, 22), new Random().Next(1, 59), new Random().Next(1, 59)),
                     MessageStatus = (Enum.EnumMessageStatus)new Random().Next(1, 3),
                     TotalUnreadMessage = (new Random().Next(0, 30) <= 10 ? 0 : new Random().Next(11, 30)),
-                    ProfileImageURL = $"{(i <= 19 ? $"Avatar_{new Random().Next(15, 20)}" : "WhatsAppDefaultProfilePic.png")}",
+                    ProfileImageURL = $"{(i <= 19 ? $"Avatar_{new Random().Next(1, 20)}" : "WhatsAppDefaultProfilePic.png")}",
                 });
             }
 

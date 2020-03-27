@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage 
+<pages:PopupPage
+    x:Class="AppReplica.Experiment.PopUpPages.RgPopupPagesDemo"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-    x:Class="AppReplica.Experiment.PopUpPages.RgPopupPagesDemo">
-    <!--You can set an animation in the xaml file or in the csharp code behind-->
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <!--  You can set an animation in the xaml file or in the csharp code behind  -->
     <pages:PopupPage.Animation>
-        <animations:ScaleAnimation 
-            PositionIn="Center"
-            PositionOut="Center"
-            ScaleIn="1.2"
-            ScaleOut="0.8"
+        <animations:ScaleAnimation
             DurationIn="400"
             DurationOut="300"
             EasingIn="SinOut"
             EasingOut="SinIn"
-            HasBackgroundAnimation="True"/>
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
     </pages:PopupPage.Animation>
-    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
-    <!--<StackLayout 
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" 
+    <!--  You can use any elements here which are extended from Xamarin.Forms.View  -->
+    <!--<StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
         Padding="20, 20, 20, 20">
         <Label
             Text="Test"/>
@@ -29,67 +29,64 @@
 
 
     <StackLayout
-        VerticalOptions="Center"
+        Padding="20"
         HorizontalOptions="Center"
-        Padding="20">
+        VerticalOptions="Center">
 
-        <Frame
-            Padding="0">
+        <Frame Padding="0">
 
             <StackLayout>
 
-                <Image 
-            Source="Avatar_3.png"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Margin="15"
-            />
+                <Image
+                    Margin="15"
+                    HorizontalOptions="Center"
+                    Source="Avatar_3.png"
+                    VerticalOptions="Center" />
 
-                <BoxView 
-                    BackgroundColor="Black"
-                    WidthRequest="1"
-                    HeightRequest="1"
+                <BoxView
                     Margin="0"
-                    />
+                    BackgroundColor="Black"
+                    HeightRequest="1"
+                    WidthRequest="1" />
 
                 <StackLayout
-                    Orientation="Horizontal"
+                    Margin="0"
                     Padding="0"
-                    Margin="0">
+                    Orientation="Horizontal">
 
-                    <ImageButton 
+                    <ImageButton
+                        HorizontalOptions="CenterAndExpand"
                         Source="WhatsAppArchieve.png"
-                        VerticalOptions="Center"
-                        HorizontalOptions="CenterAndExpand"/>
+                        VerticalOptions="Center" />
 
-                    <ImageButton 
+                    <ImageButton
+                        HorizontalOptions="CenterAndExpand"
                         Source="WhatsAppDelete.png"
-                        VerticalOptions="Center"
-                        HorizontalOptions="CenterAndExpand"/>
+                        VerticalOptions="Center" />
 
-                    <ImageButton 
+                    <ImageButton
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="CenterAndExpand"
                         Source="WhatsAppChatPinned.png"
-                        BackgroundColor="Transparent"
-                        VerticalOptions="Center"
-                        HorizontalOptions="CenterAndExpand"/>
+                        VerticalOptions="Center" />
 
-                    <ImageButton 
-                        Source="WhatsAppSettingsHelp.png"
+                    <ImageButton
                         BackgroundColor="Transparent"
-                        VerticalOptions="Center"
-                        HorizontalOptions="CenterAndExpand"/>
+                        HorizontalOptions="CenterAndExpand"
+                        Source="WhatsAppSettingsHelp.png"
+                        VerticalOptions="Center" />
 
                 </StackLayout>
-                
+
 
             </StackLayout>
 
 
         </Frame>
-        
+
 
 
     </StackLayout>
-    
-    
+
+
 </pages:PopupPage>

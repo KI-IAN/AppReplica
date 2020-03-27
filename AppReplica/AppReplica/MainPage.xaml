@@ -1,41 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:Colors="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.Styles"
-             mc:Ignorable="d"
-             x:Class="AppReplica.MainPage">
+<ContentPage
+    x:Class="AppReplica.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Colors="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.Styles"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
 
-    <StackLayout
-        Spacing="2">
-        <!-- Place new controls here -->
-        <Label Text="HelveticaNeu-Light" 
-           HorizontalOptions="Center"
+    <StackLayout Spacing="2">
+        <!--  Place new controls here  -->
+        <Label
+            FontFamily="{StaticResource WhatsAppHelveticaNeuLight}"
+            HorizontalOptions="Center"
+            Text="HelveticaNeu-Light" />
 
-           FontFamily="{StaticResource WhatsAppHelveticaNeuLight}"
+        <Label
+            FontFamily="{StaticResource WhatsAppHelveticaNeuThin}"
+            HorizontalOptions="Center"
+            Text="HelveticaNeu-Thin"
+            TextColor="{StaticResource BarBackgroundColor}" />
 
-               />
+        <Label
+            FontFamily="{StaticResource WhatsAppHelveticaNeuMedium}"
+            HorizontalOptions="Center"
+            Text="HelveticaNeu-Medium" />
 
-        <Label Text="HelveticaNeu-Thin" 
-           HorizontalOptions="Center"
-           TextColor="{StaticResource BarBackgroundColor}" 
-           FontFamily="{StaticResource WhatsAppHelveticaNeuThin}"
-               />
-
-        <Label Text="HelveticaNeu-Medium" 
-           HorizontalOptions="Center"
-
-           FontFamily="{StaticResource WhatsAppHelveticaNeuMedium}"
-               
-               />
-
-        <Label Text="HelveticaNeu-Bold" 
-           HorizontalOptions="Center"
-           TextColor="{StaticResource BarBackgroundColor }" 
-           FontFamily="{StaticResource WhatsAppHelveticaBold}"
-           FontSize="Title"
-               />
+        <Label
+            FontFamily="{StaticResource WhatsAppHelveticaBold}"
+            FontSize="Title"
+            HorizontalOptions="Center"
+            Text="HelveticaNeu-Bold"
+            TextColor="{StaticResource BarBackgroundColor}" />
 
 
     </StackLayout>

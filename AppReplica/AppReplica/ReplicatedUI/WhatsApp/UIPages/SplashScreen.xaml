@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.SplashScreen">
+<ContentPage
+    x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.SplashScreen"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
 
 
 
-    <Grid
-        BackgroundColor="{StaticResource SplashScreenBGColor}">
+    <Grid BackgroundColor="{StaticResource SplashScreenBGColor}">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="8*" />
@@ -22,41 +22,38 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image 
+        <Image
             Grid.Row="0"
             Grid.Column="0"
-            Source="WhatsAppLogo.png"
-            HorizontalOptions="CenterAndExpand"
-            VerticalOptions="CenterAndExpand"
-            HeightRequest="79"
-            WidthRequest="80"
             BackgroundColor="Transparent"
-            />
+            HeightRequest="79"
+            HorizontalOptions="CenterAndExpand"
+            Source="WhatsAppLogo.png"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="80" />
 
 
-        <Label 
+        <Label
             Grid.Row="1"
             Grid.Column="0"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="End"
             Text="from"
             TextColor="{StaticResource SplashScreenLightTextColor}"
-            HorizontalOptions="Center"
             VerticalOptions="EndAndExpand"
-            HorizontalTextAlignment="End"
-            VerticalTextAlignment="End"
-            />
+            VerticalTextAlignment="End" />
 
-        <Label 
+        <Label
             Grid.Row="2"
             Grid.Column="0"
-            Text="FACEBOOK"
-            FontSize="Medium"
-            TextColor="{StaticResource SplashScreenFBTextColor}"
-            HorizontalOptions="CenterAndExpand"
-            VerticalOptions="Start"
             FontFamily="{StaticResource WhatsAppHelveticaNeuBold}"
-            />
+            FontSize="Medium"
+            HorizontalOptions="CenterAndExpand"
+            Text="FACEBOOK"
+            TextColor="{StaticResource SplashScreenFBTextColor}"
+            VerticalOptions="Start" />
 
     </Grid>
-    
-    
+
+
 </ContentPage>

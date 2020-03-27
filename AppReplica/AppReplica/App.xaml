@@ -1,49 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:converters="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.Converter"
-             mc:Ignorable="d"
-             x:Class="AppReplica.App">
+<Application
+    x:Class="AppReplica.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.Converter"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
     <Application.Resources>
-        
-        
-        <!-- WhatsApp Fonts -->
+
+
+        <!--  WhatsApp Fonts  -->
         <ResourceDictionary>
 
-            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaNeuLight">
-                <On Platform="Android" Value="HelveticaNeue-Light.ttf#HelveticaNeue-Light" ></On>
+            <OnPlatform x:Key="WhatsAppHelveticaNeuLight" x:TypeArguments="x:String">
+                <On Platform="Android" Value="HelveticaNeue-Light.ttf#HelveticaNeue-Light" />
             </OnPlatform>
 
-            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaNeuThin">
-                <On Platform="Android" Value="HelveticaNeue-Thin.ttf#HelveticaNeue-Thin" ></On>
+            <OnPlatform x:Key="WhatsAppHelveticaNeuThin" x:TypeArguments="x:String">
+                <On Platform="Android" Value="HelveticaNeue-Thin.ttf#HelveticaNeue-Thin" />
             </OnPlatform>
 
-            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaNeuMedium">
-                <On Platform="Android" Value="HelveticaNeue-Medium.ttf#HelveticaNeue-Medium"></On>
+            <OnPlatform x:Key="WhatsAppHelveticaNeuMedium" x:TypeArguments="x:String">
+                <On Platform="Android" Value="HelveticaNeue-Medium.ttf#HelveticaNeue-Medium" />
             </OnPlatform>
 
-            <OnPlatform x:TypeArguments="x:String" x:Key="WhatsAppHelveticaNeuBold">
-                <On Platform="Android" Value="HelveticaNeue-Bold.ttf#HelveticaNeue-Bold"></On>
+            <OnPlatform x:Key="WhatsAppHelveticaNeuBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="HelveticaNeue-Bold.ttf#HelveticaNeue-Bold" />
             </OnPlatform>
-            
+
         </ResourceDictionary>
-        
-        
-        
-        <!-- Implicit usages of same font across WhatsApp UI-->
+
+
+
+        <!--  Implicit usages of same font across WhatsApp UI  -->
         <Style TargetType="Label">
-            <Setter Property="Text" Value="{StaticResource WhatsAppHelveticaNeuLight}"></Setter>
+            <Setter Property="Text" Value="{StaticResource WhatsAppHelveticaNeuLight}" />
         </Style>
 
         <Style TargetType="Button">
-            <Setter Property="Text" Value="{StaticResource WhatsAppHelveticaNeuLight}"></Setter>
+            <Setter Property="Text" Value="{StaticResource WhatsAppHelveticaNeuLight}" />
         </Style>
 
 
 
-        <!-- Merged Resources-->
+        <!--  Merged Resources  -->
         <!--<ResourceDictionary Source="ReplicatedUI/WhatsApp/Styles/AppColors.xaml"></ResourceDictionary>-->
 
         <ResourceDictionary>
@@ -51,13 +52,13 @@
                 <ResourceDictionary Source="ReplicatedUI/WhatsApp/Styles/AppColors.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-        
-        
-        
-        <!-- Converters -->
+
+
+
+        <!--  Converters  -->
         <ResourceDictionary>
             <converters:NegationConverter x:Key="NegationConverter" />
         </ResourceDictionary>
-        
+
     </Application.Resources>
 </Application>
