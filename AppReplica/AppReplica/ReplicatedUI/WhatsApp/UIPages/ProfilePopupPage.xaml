@@ -21,12 +21,12 @@
             DurationIn="400"
             DurationOut="300"
             EasingIn="Linear"
-            EasingOut="SinOut"
+            EasingOut="CubicIn"
             HasBackgroundAnimation="True"
             PositionIn="Left"
-            PositionOut="Left"
+            PositionOut="Center"
             ScaleIn="1.2"
-            ScaleOut="0.8" />
+            ScaleOut="2.2" />
     </pages:PopupPage.Animation>
 
 
