@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using Xamarin.Forms;
 using Rg.Plugins.Popup.Services;
+using System.Threading.Tasks;
 
 namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 {
@@ -29,6 +30,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
         bool _hasArchivedChats;
 
         string _searchString = String.Empty;
+
+        bool _isPageRefreshing;
 
         #endregion
 
@@ -140,6 +143,21 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
             }
         }
 
+
+        public bool IsPageRefreshing
+        {
+            get
+            {
+                return _isPageRefreshing;
+            }
+
+            set
+            {
+                _isPageRefreshing = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
 
 
@@ -223,8 +241,10 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
         }
 
 
-        private void Search(object parameter)
+        private async void Search(object parameter)
         {
+            IsPageRefreshing = true;
+
             string searchString = parameter.ToString();
 
             if (!String.IsNullOrEmpty(searchString))
@@ -241,6 +261,11 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
             {
                 ChatCollection = _tempAllChatCollection;
             }
+
+            await Task.Delay(1 * 1000);   //Seems like Activity Indicator does not work without a Asynchronouse Function!!
+
+
+            IsPageRefreshing = false;
         }
 
 
@@ -254,7 +279,9 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
             List<ChatListViewModel> data = new List<ChatListViewModel>();
 
-            for (int i = 1; i <= new Random().Next(15, 30); i++)
+            int totalContacts = new Random().Next(100, 200);
+
+            for (int i = 1; i <= totalContacts; i++)
             {
                 data.Add(new ChatListViewModel()
                 {
@@ -265,7 +292,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
                                                         new Random().Next(1, 22), new Random().Next(1, 59), new Random().Next(1, 59)),
                     MessageStatus = (Enum.EnumMessageStatus)new Random().Next(1, 3),
                     TotalUnreadMessage = (new Random().Next(0, 30) <= 10 ? 0 : new Random().Next(11, 30)),
-                    ProfileImageURL = $"{(i <= 19 ? $"Avatar_{new Random().Next(1, 20)}" : "WhatsAppDefaultProfilePic.png")}",
+                    ProfileImageURL = $"Avatar_{new Random().Next(1, 20)}",
                 });
             }
 
