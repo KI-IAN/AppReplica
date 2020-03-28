@@ -18,6 +18,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
         ObservableCollection<ChatListViewModel> _chatCollection;
 
+        ObservableCollection<ChatListViewModel> _tempAllChatCollection;
+
         int _totalUnreadMessage;
 
         bool _isListViewRefreshing;
@@ -25,6 +27,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
         int _totalArchivedChat;
 
         bool _hasArchivedChats;
+
+        string _searchString = String.Empty;
 
         #endregion
 
@@ -85,6 +89,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
         public Command PopupProfileCommand { get; }
 
+        public Command SearchCommand { get; }
+
         public int TotalArchivedChat
         {
 
@@ -117,6 +123,23 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
 
         }
 
+
+        public string SearchString
+        {
+            get
+            {
+                return _searchString;
+            }
+            set
+            {
+                _searchString = value;
+
+                Search(_searchString);
+
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
 
 
@@ -137,6 +160,8 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
             NavigatePageCommand = new Command((object parameter) => NavigatePage(parameter));
 
             PopupProfileCommand = new Command((object parameter) => PopupProfile(parameter));
+
+            SearchCommand = new Command((object parameter) => Search(parameter));
 
             #endregion
 
@@ -175,6 +200,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
             TotalArchivedChat = new Random().Next(0, 5);
             HasArchivedChats = TotalArchivedChat > 0 ? true : false;
             IsListViewRefreshing = false;
+            _tempAllChatCollection = _chatCollection;
         }
 
 
@@ -195,6 +221,28 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
                 ProfilePicSource = data.ProfileImageURL,
             }));
         }
+
+
+        private void Search(object parameter)
+        {
+            string searchString = parameter.ToString();
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+
+                var filteredData = _tempAllChatCollection.Where(
+                    r => (!String.IsNullOrEmpty(r.ContactName) && r.ContactName.ToLower().Contains(searchString))
+                    || (!String.IsNullOrEmpty(r.ContactNumber) && r.ContactNumber.ToLower().Contains(searchString)))
+                    .ToList();
+
+                ChatCollection = new ObservableCollection<ChatListViewModel>(filteredData);
+            }
+            else
+            {
+                ChatCollection = _tempAllChatCollection;
+            }
+        }
+
 
         #endregion
 

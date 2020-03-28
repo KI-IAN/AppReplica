@@ -36,201 +36,219 @@
 
     </ContentPage.ToolbarItems>
 
-    <AbsoluteLayout>
+    <StackLayout
+        Margin="0"
+        Padding="0"
+        BackgroundColor="White">
+
+        <SearchBar
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Search..."
+            SearchCommand="{Binding SearchCommand}"
+            SearchCommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+            Text="{Binding SearchString}"
+            VerticalOptions="Start" />
 
 
 
-        <ListView
-            x:Name="lvChat"
-            x:DataType="viewModels:ChatListCollectionViewModel"
-            AbsoluteLayout.LayoutBounds="0,0,1,1"
-            AbsoluteLayout.LayoutFlags="All"
-            BackgroundColor="White"
-            HasUnevenRows="True"
-            IsEnabled="True"
-            IsPullToRefreshEnabled="True"
-            IsRefreshing="{Binding IsListViewRefreshing}"
-            ItemsSource="{Binding ChatCollection}"
-            RefreshCommand="{Binding RefreshListCommand}"
-            SelectionMode="Single"
-            SeparatorColor="LightGray"
-            SeparatorVisibility="Default">
+        <StackLayout>
+
+            <AbsoluteLayout>
+
+                <ListView
+                    x:Name="lvChat"
+                    x:DataType="viewModels:ChatListCollectionViewModel"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="White"
+                    HasUnevenRows="True"
+                    IsEnabled="True"
+                    IsPullToRefreshEnabled="True"
+                    IsRefreshing="{Binding IsListViewRefreshing}"
+                    ItemsSource="{Binding ChatCollection}"
+                    RefreshCommand="{Binding RefreshListCommand}"
+                    SelectionMode="Single"
+                    SeparatorColor="LightGray"
+                    SeparatorVisibility="Default">
 
 
-            <ListView.Footer>
+                    <ListView.Footer>
 
 
-                <StackLayout>
+                        <StackLayout>
 
-                    <Button
-                        Margin="0,20,0,40"
-                        BackgroundColor="{Binding Source={x:Reference lvChat}, Path=BackgroundColor}"
-                        FontAttributes="Bold"
-                        FontSize="11"
-                        IsVisible="{Binding HasArchivedChats}"
-                        Text="{Binding TotalArchivedChat, StringFormat='Archived ({0})'}"
-                        TextColor="SlateGray" />
+                            <Button
+                                Margin="0,20,0,40"
+                                BackgroundColor="{Binding Source={x:Reference lvChat}, Path=BackgroundColor}"
+                                FontAttributes="Bold"
+                                FontSize="11"
+                                IsVisible="{Binding HasArchivedChats}"
+                                Text="{Binding TotalArchivedChat, StringFormat='Archived ({0})'}"
+                                TextColor="SlateGray" />
 
-                    <Label
-                        Padding="0,20,0,40"
-                        BackgroundColor="Transparent"
-                        FontSize="11"
-                        HorizontalOptions="CenterAndExpand"
-                        IsVisible="{Binding HasArchivedChats, Converter={StaticResource NegationConverter}}"
-                        Text="Tap and hold on a chat for more options"
-                        TextColor="SlateGray"
-                        VerticalOptions="CenterAndExpand" />
+                            <Label
+                                Padding="0,20,0,40"
+                                BackgroundColor="Transparent"
+                                FontSize="11"
+                                HorizontalOptions="CenterAndExpand"
+                                IsVisible="{Binding HasArchivedChats, Converter={StaticResource NegationConverter}}"
+                                Text="Tap and hold on a chat for more options"
+                                TextColor="SlateGray"
+                                VerticalOptions="CenterAndExpand" />
 
-                </StackLayout>
+                        </StackLayout>
 
-            </ListView.Footer>
-
-
-
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="viewModels:ChatListViewModel">
-
-                    <ViewCell>
-                        <Grid Margin="0,5,0,5">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-
-                            </Grid.RowDefinitions>
-
-
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="3*" />
-                                <ColumnDefinition Width="*" />
-
-                            </Grid.ColumnDefinitions>
+                    </ListView.Footer>
 
 
 
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="viewModels:ChatListViewModel">
 
-                            <AbsoluteLayout
-                                Grid.Row="0"
-                                Grid.RowSpan="3"
-                                Grid.Column="0">
+                            <ViewCell>
+                                <Grid Margin="0,5,0,5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
 
-                                <Frame
-                                    Margin="0"
-                                    Padding="0"
-                                    CornerRadius="25"
-                                    HeightRequest="50"
-                                    IsClippedToBounds="True"
-                                    WidthRequest="50">
-
-                                    <ImageButton
-                                        Aspect="Fill"
-                                        Command="{Binding Source={x:Reference chatContentPage}, Path=BindingContext.PopupProfileCommand}"
-                                        CommandParameter="{Binding .}"
-                                        HorizontalOptions="Center"
-                                        Source="{Binding ProfileImageURL}"
-                                        VerticalOptions="Center" />
+                                    </Grid.RowDefinitions>
 
 
-                                </Frame>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="*" />
+
+                                    </Grid.ColumnDefinitions>
 
 
-                                <Frame
-                                    Margin="0"
-                                    Padding="0"
-                                    AbsoluteLayout.LayoutBounds=".98,.98,20,20"
-                                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                                    BackgroundColor="{StaticResource WhatsAppSelectedItemBGColor}"
-                                    BorderColor="White"
-                                    CornerRadius="10"
-                                    IsClippedToBounds="True"
-                                    IsVisible="{Binding ShowUnreadMessageAlert}">
 
-                                    <Image
-                                        HeightRequest="12"
-                                        HorizontalOptions="Center"
-                                        Source="WhatsAppWhiteTicks.png"
+
+                                    <AbsoluteLayout
+                                        Grid.Row="0"
+                                        Grid.RowSpan="3"
+                                        Grid.Column="0">
+
+                                        <Frame
+                                            Margin="0"
+                                            Padding="0"
+                                            CornerRadius="25"
+                                            HeightRequest="50"
+                                            IsClippedToBounds="True"
+                                            WidthRequest="50">
+
+                                            <ImageButton
+                                                Aspect="Fill"
+                                                Command="{Binding Source={x:Reference chatContentPage}, Path=BindingContext.PopupProfileCommand}"
+                                                CommandParameter="{Binding .}"
+                                                HorizontalOptions="Center"
+                                                Source="{Binding ProfileImageURL}"
+                                                VerticalOptions="Center" />
+
+
+                                        </Frame>
+
+
+                                        <Frame
+                                            Margin="0"
+                                            Padding="0"
+                                            AbsoluteLayout.LayoutBounds=".98,.98,20,20"
+                                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                                            BackgroundColor="{StaticResource WhatsAppSelectedItemBGColor}"
+                                            BorderColor="White"
+                                            CornerRadius="10"
+                                            IsClippedToBounds="True"
+                                            IsVisible="{Binding ShowUnreadMessageAlert}">
+
+                                            <Image
+                                                HeightRequest="12"
+                                                HorizontalOptions="Center"
+                                                Source="WhatsAppWhiteTicks.png"
+                                                VerticalOptions="Center"
+                                                WidthRequest="12" />
+                                        </Frame>
+
+                                    </AbsoluteLayout>
+
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontFamily="{StaticResource WhatsAppHelveticaNeuBold}"
+                                        FontSize="15"
+                                        HorizontalOptions="Start"
+                                        Text="{Binding Contact}"
+                                        TextColor="Black"
                                         VerticalOptions="Center"
-                                        WidthRequest="12" />
-                                </Frame>
+                                        VerticalTextAlignment="Center" />
 
-                            </AbsoluteLayout>
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        FontSize="12"
+                                        Text="{Binding LastMessageDateTime, StringFormat='{0:dd/MM/yyyy}'}"
+                                        TextColor="Gray"
+                                        VerticalOptions="Center"
+                                        VerticalTextAlignment="Center" />
 
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="1"
-                                FontFamily="{StaticResource WhatsAppHelveticaNeuBold}"
-                                FontSize="15"
-                                HorizontalOptions="Start"
-                                Text="{Binding Contact}"
-                                TextColor="Black"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
-
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="2"
-                                FontSize="12"
-                                Text="{Binding LastMessageDateTime, StringFormat='{0:dd/MM/yyyy}'}"
-                                TextColor="Gray"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
-
-                            <Label
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                HorizontalOptions="Start"
-                                Text="{Binding LastMessage}"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        HorizontalOptions="Start"
+                                        Text="{Binding LastMessage}"
+                                        VerticalOptions="Center"
+                                        VerticalTextAlignment="Center" />
 
 
-                            <Frame
-                                Grid.Row="1"
-                                Grid.Column="2"
-                                Margin="0"
-                                Padding="0"
-                                BackgroundColor="#25D366"
-                                CornerRadius="12"
-                                HeightRequest="24"
-                                HorizontalOptions="Center"
-                                IsVisible="{Binding ShowUnreadMessageAlert}"
-                                VerticalOptions="Center"
-                                WidthRequest="24">
+                                    <Frame
+                                        Grid.Row="1"
+                                        Grid.Column="2"
+                                        Margin="0"
+                                        Padding="0"
+                                        BackgroundColor="#25D366"
+                                        CornerRadius="12"
+                                        HeightRequest="24"
+                                        HorizontalOptions="Center"
+                                        IsVisible="{Binding ShowUnreadMessageAlert}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="24">
 
-                                <Label
-                                    HorizontalOptions="Center"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding TotalUnreadMessage}"
-                                    TextColor="White"
-                                    VerticalOptions="Center"
-                                    VerticalTextAlignment="Center" />
-                            </Frame>
+                                        <Label
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            Text="{Binding TotalUnreadMessage}"
+                                            TextColor="White"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </Frame>
 
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
 
-
-        <!--  Sticky Send Message Button : Bottom Right Corner  -->
-        <Frame
-            Margin="0"
-            Padding="15"
-            AbsoluteLayout.LayoutBounds=".92,.98,60,60"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            BackgroundColor="#25D366"
-            CornerRadius="30">
-
-
-            <ImageButton BackgroundColor="Transparent" Source="WhatsAppStickyButton.png" />
-        </Frame>
+                <!--  Sticky Send Message Button : Bottom Right Corner  -->
+                <Frame
+                    Margin="0"
+                    Padding="15"
+                    AbsoluteLayout.LayoutBounds=".92,.98,60,60"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BackgroundColor="#25D366"
+                    CornerRadius="30">
 
 
-    </AbsoluteLayout>
+                    <ImageButton BackgroundColor="Transparent" Source="WhatsAppStickyButton.png" />
+                </Frame>
+
+            </AbsoluteLayout>
+
+
+
+        </StackLayout>
+
+
+    </StackLayout>
 
 </ContentPage>
