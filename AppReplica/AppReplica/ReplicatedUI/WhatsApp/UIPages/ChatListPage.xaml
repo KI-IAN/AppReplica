@@ -243,14 +243,38 @@
                 </Frame>
 
 
+                <!--  Back Drop / Overlay  -->
+
+                <Frame
+                    Margin="0"
+                    Padding="0"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="White"
+                    IsVisible="{Binding IsPageRefreshing}"
+                    Opacity="0.9">
+
+                    <Image
+                        Aspect="Fill"
+                        HeightRequest="160"
+                        HorizontalOptions="CenterAndExpand"
+                        IsAnimationPlaying="True"
+                        Source="Loader_03.gif"
+                        VerticalOptions="Center"
+                        WidthRequest="160" />
+
+                </Frame>
+
+
                 <!--  Activity Indicator  -->
-                <ActivityIndicator
-                    AbsoluteLayout.LayoutBounds="0.5,0.2,60,60"
+                <!--<ActivityIndicator
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,60,60"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     HorizontalOptions="Center"
                     IsRunning="{Binding IsPageRefreshing}"
                     VerticalOptions="Center"
-                    Color="{StaticResource BarBackgroundColor}" />
+                    Color="{StaticResource BarBackgroundColor}" />-->
+
 
             </AbsoluteLayout>
 

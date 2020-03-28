@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/AppReplica/AppReplica.Android/CustomRenderer/CustomActivityIndicatorRenderer.cs
+/AppReplica/AppReplica/Experiment/CustomControl/CustomActivityIndicator.cs

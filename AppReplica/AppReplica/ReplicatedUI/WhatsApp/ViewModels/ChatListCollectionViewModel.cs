@@ -262,7 +262,7 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
                 ChatCollection = _tempAllChatCollection;
             }
 
-            await Task.Delay(1 * 1000);   //Seems like Activity Indicator does not work without a Asynchronouse Function!!
+            await Task.Delay(1 * 2000);   //Seems like Activity Indicator does not work without a Asynchronouse Function!!
 
 
             IsPageRefreshing = false;
