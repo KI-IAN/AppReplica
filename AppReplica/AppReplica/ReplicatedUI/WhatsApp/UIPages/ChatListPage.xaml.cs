@@ -38,9 +38,15 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
 
         private void ToolbarItem_Search_Clicked(object sender, EventArgs e)
         {
+            //When search bar is closed, remember to refresh list view and show it's original items
+            if (csb_SearchBar.IsVisible)
+            {
+                csb_SearchBar.Text = String.Empty;
+            }
 
-            csb_SearchBar.FadeTo((csb_SearchBar.IsVisible ? 0 : 1), 1*750, Easing.CubicIn);
+            csb_SearchBar.FadeTo((csb_SearchBar.IsVisible ? 0 : 1), 1 * 750, Easing.CubicIn);
             csb_SearchBar.IsVisible = csb_SearchBar.IsVisible ? false : true;
+
 
 
         }
