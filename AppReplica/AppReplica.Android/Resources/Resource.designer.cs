@@ -8427,64 +8427,67 @@ namespace AppReplica.Droid
 			public const int WhatsAppArchieve = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int WhatsAppCall = 2131165325;
+			public const int WhatsAppBackButton = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int WhatsAppCameraIcon = 2131165326;
+			public const int WhatsAppCall = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int WhatsAppChatPinned = 2131165327;
+			public const int WhatsAppCameraIcon = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int WhatsAppDefaultProfilePic = 2131165328;
+			public const int WhatsAppChatPinned = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int WhatsAppDelete = 2131165329;
+			public const int WhatsAppDefaultProfilePic = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int WhatsAppInfo = 2131165330;
+			public const int WhatsAppDelete = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int WhatsAppKebabMenuIcon = 2131165331;
+			public const int WhatsAppInfo = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int WhatsAppLogo = 2131165332;
+			public const int WhatsAppKebabMenuIcon = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int WhatsAppMuteNotification = 2131165333;
+			public const int WhatsAppLogo = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int WhatsAppSearchIcon = 2131165334;
+			public const int WhatsAppMuteNotification = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int WhatsAppSendText = 2131165335;
+			public const int WhatsAppSearchIcon = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int WhatsAppSettingsAccount = 2131165336;
+			public const int WhatsAppSendText = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int WhatsAppSettingsChat = 2131165337;
+			public const int WhatsAppSettingsAccount = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int WhatsAppSettingsDataUsage = 2131165338;
+			public const int WhatsAppSettingsChat = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int WhatsAppSettingsHelp = 2131165339;
+			public const int WhatsAppSettingsDataUsage = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int WhatsAppSettingsInviteAFriend = 2131165340;
+			public const int WhatsAppSettingsHelp = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int WhatsAppSettingsNotification = 2131165341;
+			public const int WhatsAppSettingsInviteAFriend = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int WhatsAppStickyButton = 2131165342;
+			public const int WhatsAppSettingsNotification = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int WhatsAppVideoCall = 2131165343;
+			public const int WhatsAppStickyButton = 2131165343;
 			
 			// aapt resource value: 0x7F0700A0
-			public const int WhatsAppWhiteTicks = 2131165344;
+			public const int WhatsAppVideoCall = 2131165344;
+			
+			// aapt resource value: 0x7F0700A1
+			public const int WhatsAppWhiteTicks = 2131165345;
 			
 			static Drawable()
 			{

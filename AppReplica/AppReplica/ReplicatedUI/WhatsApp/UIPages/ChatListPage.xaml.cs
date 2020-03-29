@@ -26,5 +26,19 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
 
             await Navigation.PushAsync(new SettingsPages.MainSettingsPage());
         }
+
+        private void CustomSearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            var searchBar = sender as AppReplica.Experiment.CustomControl.CustomSearchBar;
+
+            searchBar.IsVisible = false;
+
+            searchBar.Text = String.Empty;
+        }
+
+        private void ToolbarItem_Search_Clicked(object sender, EventArgs e)
+        {
+            csb_SearchBar.IsVisible = true;
+        }
     }
 }

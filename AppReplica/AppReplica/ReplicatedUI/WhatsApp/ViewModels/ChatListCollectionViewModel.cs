@@ -255,15 +255,16 @@ namespace AppReplica.ReplicatedUI.WhatsApp.ViewModels
                     || (!String.IsNullOrEmpty(r.ContactNumber) && r.ContactNumber.ToLower().Contains(searchString)))
                     .ToList();
 
+                await Task.Delay(1 * 500);   //Seems like Activity Indicator does not work without a Asynchronouse Function!!
+
                 ChatCollection = new ObservableCollection<ChatListViewModel>(filteredData);
             }
             else
             {
+                await Task.Delay(1 * 500);   //Seems like Activity Indicator does not work without a Asynchronouse Function!!
+
                 ChatCollection = _tempAllChatCollection;
             }
-
-            await Task.Delay(1 * 2000);   //Seems like Activity Indicator does not work without a Asynchronouse Function!!
-
 
             IsPageRefreshing = false;
         }

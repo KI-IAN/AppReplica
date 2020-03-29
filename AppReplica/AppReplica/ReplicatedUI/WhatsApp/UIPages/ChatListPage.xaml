@@ -3,6 +3,7 @@
     x:Class="AppReplica.ReplicatedUI.WhatsApp.UIPages.ChatListPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customControls="clr-namespace:AppReplica.Experiment.CustomControl"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:AppReplica.ReplicatedUI.WhatsApp.ViewModels"
@@ -18,7 +19,10 @@
 
     <ContentPage.ToolbarItems>
 
-        <ToolbarItem IconImageSource="WhatsAppSearchIcon.png" Order="Primary" />
+        <ToolbarItem
+            Clicked="ToolbarItem_Search_Clicked"
+            IconImageSource="WhatsAppSearchIcon.png"
+            Order="Primary" />
 
         <ToolbarItem Order="Secondary" Text="New group" />
 
@@ -41,9 +45,12 @@
         Padding="0"
         BackgroundColor="White">
 
-        <SearchBar
+        <customControls:CustomSearchBar
+            x:Name="csb_SearchBar"
             HorizontalOptions="FillAndExpand"
+            IsVisible="False"
             Placeholder="Search..."
+            SearchButtonPressed="CustomSearchBar_SearchButtonPressed"
             SearchCommand="{Binding SearchCommand}"
             SearchCommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
             Text="{Binding SearchString}"

@@ -25,7 +25,7 @@
 
     <!--Highlighted selected item color of ListView/CollectionView-->
     <!--<item name="android:colorActivatedHighlight">#123456</item>-->
-    
+
   </style>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
