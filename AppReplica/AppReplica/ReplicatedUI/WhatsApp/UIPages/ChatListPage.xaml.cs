@@ -38,7 +38,11 @@ namespace AppReplica.ReplicatedUI.WhatsApp.UIPages
 
         private void ToolbarItem_Search_Clicked(object sender, EventArgs e)
         {
-            csb_SearchBar.IsVisible = true;
+
+            csb_SearchBar.FadeTo((csb_SearchBar.IsVisible ? 0 : 1), 1*750, Easing.CubicIn);
+            csb_SearchBar.IsVisible = csb_SearchBar.IsVisible ? false : true;
+
+
         }
     }
 }

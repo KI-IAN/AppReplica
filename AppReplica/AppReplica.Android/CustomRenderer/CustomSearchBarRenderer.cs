@@ -33,13 +33,16 @@ namespace AppReplica.Droid.CustomRenderer
                 // Get native control (background set in shared code, but can use SetBackgroundColor here)
                 SearchView searchView = (base.Control as SearchView);
 
-                //searchView.TextAlignment = Android.Views.TextAlignment.Center;
-                //searchView.SetBackgroundColor(Android.Graphics.Color.Green);
+
+                #region Remove Bottom Border of SearchView
+                int viewId = searchView.Context.Resources.GetIdentifier("android:id/search_plate", null, null);
+                Android.Views.View view = (searchView.FindViewById(viewId) as Android.Views.View);
+                view.SetBackgroundColor(Android.Graphics.Color.Transparent);    //Removing bottom border
+                #endregion
 
                 // Access search textview within control
                 int textViewId = searchView.Context.Resources.GetIdentifier("android:id/search_src_text", null, null);
                 EditText textView = (searchView.FindViewById(textViewId) as EditText);
-                textView.SetWidth(searchView.Width);
 
                 //Magnifier Icon for Searching
                 int searchMagIcon = searchView.Context.Resources.GetIdentifier("android:id/search_mag_icon", null, null);
